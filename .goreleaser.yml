@@ -13,13 +13,9 @@ builds:
     goarch:
       - '386'
       - amd64
-      - arm
-      - arm64
     goos:
       - darwin
-      - freebsd
       - linux
-      - windows
     ignore:
       - goarch: '386'
         goos: darwin
@@ -33,8 +29,6 @@ checksum:
   algorithm: sha256
 env:
   - CGO_ENABLED=0
-release:
-  disable: true
 signs:
   - artifacts: checksum
     args:
@@ -45,3 +39,5 @@ signs:
       - "${signature}"
       - "--detach-sign"
       - "${artifact}"
+release:
+# do nothing
