@@ -33,8 +33,6 @@ checksum:
   algorithm: sha256
 env:
   - CGO_ENABLED=0
-release:
-  disable: true
 signs:
   - artifacts: checksum
     args:
@@ -45,3 +43,5 @@ signs:
       - "${signature}"
       - "--detach-sign"
       - "${artifact}"
+release:
+# nothing to see here
